@@ -1,4 +1,5 @@
 # -*- coding: utf-8; mode: makefile-gmake -*-
+# SPDX-License-Identifier: AGPL-3.0-or-later
 .DEFAULT_GOAL=help
 
 # START Makefile setup
@@ -214,14 +215,18 @@ ifeq ($(PY),2)
 test.pylint:
 	@echo "LINT      skip liniting py2"
 else
-# TODO: balance linting with pylint
-
 test.pylint: pyenvinstall
-	$(call cmd,pylint,\
-		searx/preferences.py \
-		searx/testing.py \
-	)
+	$(call cmd,pylint,$(PYLINT_FILES))
 endif
+
+# TODO: balance linting with pylint
+PYLINT_FILES=\
+	searx/preferences.py \
+	searx/resources.py \
+	searx/testing.py \
+	searx/plugins/__init__.py \
+	searx/version.py \
+	tests/unit/test_plugins.py
 
 # ignored rules:
 #  E402 module level import not at top of file
@@ -240,11 +245,16 @@ test.sh:
 
 test.pep8: pyenvinstall
 	@echo "TEST      pep8"
-	$(Q)$(PY_ENV_ACT); pep8 --exclude=searx/static --max-line-length=120 --ignore "E402,W503" searx tests
+	$(Q)$(PY_ENV_ACT); pep8 --exclude='searx/static, $(foreach f,$(PYLINT_FILES),$(f),)' --max-line-length=120 --ignore "E402,W503" searx tests
 
+ifeq ($(PY),2)
+test.unit:
+	@echo "TEST      skip py2 unit tests"
+else
 test.unit: pyenvinstall
 	@echo "TEST      tests/unit"
 	$(Q)$(PY_ENV_ACT); python -m nose2 -s tests/unit
+endif
 
 test.coverage:  pyenvinstall
 	@echo "TEST      unit test coverage"

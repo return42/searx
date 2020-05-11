@@ -1,19 +1,4 @@
-'''
-searx is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-searx is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License
-along with searx. If not, see < http://www.gnu.org/licenses/ >.
-
-(C) 2013- by Adam Tauber, <asciimoo@gmail.com>
-'''
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
 import gc
 import sys
@@ -31,7 +16,7 @@ from searx.utils import gen_useragent
 from searx.query import RawTextQuery, SearchQuery, VALID_LANGUAGE_CODE
 from searx.results import ResultContainer
 from searx import logger
-from searx.plugins import plugins
+from searx.plugins import get_plugins
 from searx.exceptions import SearxParameterException
 
 try:
@@ -530,9 +515,10 @@ class SearchWithPlugins(Search):
         self.request = request
 
     def search(self):
-        if plugins.call(self.ordered_plugin_list, 'pre_search', self.request, self):
-            super(SearchWithPlugins, self).search()
+        plugins = get_plugins()
 
+        plugins.call(self.ordered_plugin_list, 'pre_search', self.request, self)
+        super(SearchWithPlugins, self).search()
         plugins.call(self.ordered_plugin_list, 'post_search', self.request, self)
 
         results = self.result_container.get_ordered_results()

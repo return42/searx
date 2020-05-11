@@ -1,26 +1,40 @@
 .. _dev plugin:
 
-=======
-Plugins
-=======
+========================
+Developing searx plugins
+========================
+
+.. _Using package metadata:
+    https://packaging.python.org/guides/creating-and-discovering-plugins/#using-package-metadata
 
 .. sidebar:: Further reading ..
 
    - :ref:`plugins generic`
 
-Plugins can extend or replace functionality of various components of searx.
+Plugins can extend or replace functionality of various components of searx.  A
+Plugin consists of :py:obj:`required <searx.plugins.required_attrs>` and
+:py:obj:`optional <searx.plugins.optional_attrs>` attributes and it adds
+*callbacks* to hooks.  Hooks define when a plugin runs. Right now only three
+hooks are implemented :ref:`[ref] <searx.plugins sources>`:
 
-Example plugin
-==============
+- Pre search hook: :py:func:`pre_search() <searx.plugins.Plugin.pre_search>`
+- Post search hook: :py:func:`post_search() <searx.plugins.Plugin.post_search>`
+- On result is added: :py:func:`on_result() <searx.plugins.Plugin.on_result>`
 
-.. code:: python
+You can create a plugin on a *module level* -- like shown in :ref:`Example
+plugin` -- or by subclassing :py:class:`searx.plugins.Plugin` .
+
+.. _Example plugin:
+
+.. code-block:: python
+   :caption: Example plugin
 
    name = 'Example plugin'
    description = 'This plugin extends the suggestions with the word "example"'
    default_on = False  # disabled by default
 
-   js_dependencies = tuple()  # optional, list of static js files
-   css_dependencies = tuple()  # optional, list of static css files
+   js_dependencies = tuple()   # optional, list of static JS files
+   css_dependencies = tuple()  # optional, list of static CSS files
 
 
    # attach callback to the post search hook
@@ -30,25 +44,40 @@ Example plugin
        ctx['search'].suggestions.add('example')
        return True
 
-Plugin entry points
-===================
+Searx discovers *external* plugins by `Using package metadata`_.  Add a
+:py:obj:`'searx.plugins' <searx.plugins.ENTRY_POINTS>` item to the
+``entry_points`` argument in you project's ``setup.py`` -- like shown in
+:ref:`setup.py <plugin register entry_point>`.
 
-Entry points (hooks) define when a plugin runs. Right now only three hooks are
-implemented. So feel free to implement a hook if it fits the behaviour of your
-plugin.
+.. _plugin register entry_point:
 
-Pre search hook
----------------
+.. code-block:: python
+   :caption: ``setup.py`` -- register plugin using ``entry_points`` argument.
 
-Runs BEFORE the search request. Function to implement: ``pre_search``
+   setup(
+       name = 'example',
+       # ...
+       entry_points = {
+           'searx.plugins': [ 'foo_example_plugin = foo.example.plugin', ],
+       },
+   )
 
-Post search hook
-----------------
+.. _external plugins:
 
-Runs AFTER the search request. Function to implement: ``post_search``
+Known plugins from the Web
+==========================
 
-Result hook
------------
+tgwf-searx-plugins
+  Any results not being hosted on green infrastructure will be filtered (origin
+  ``PR1878 <https://github.com/asciimoo/searx/pull/1878>`_)::
 
-Runs when a new result is added to the result list. Function to implement:
-``on_result``
+    pip install git+https://github.com/return42/tgwf-searx-plugins
+
+
+.. _searx.plugins sources:
+
+Remarks from source code
+========================
+
+.. automodule:: searx.plugins
+   :members:
