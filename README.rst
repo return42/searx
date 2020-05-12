@@ -1,7 +1,7 @@
 .. SPDX-License-Identifier: AGPL-3.0-or-later
 
-.. figure:: https://raw.githubusercontent.com/asciimoo/searx/master/searx/static/themes/oscar/img/logo_searx_a.png
-   :target: https://asciimoo.github.io/searx/
+.. figure:: https://raw.githubusercontent.com/return42/searx/searx-next/searx/static/themes/oscar/img/logo_searx_a.png
+   :target: https://return42.github.io/searx/
    :alt: searX
    :width: 100%
    :align: center
@@ -22,16 +22,16 @@ Privacy-respecting, hackable `metasearch engine`_ / *pronunciation* **səːks**.
 .. _metasearch engine: https://en.wikipedia.org/wiki/Metasearch_engine
 
 .. |searx install| image:: https://img.shields.io/badge/-install-blue
-   :target: https://asciimoo.github.io/searx/admin/installation.html
+   :target: https://return42.github.io/searx/admin/installation.html
 
 .. |searx homepage| image:: https://img.shields.io/badge/-homepage-blue
-   :target: https://asciimoo.github.io/searx
+   :target: https://return42.github.io/searx
 
 .. |searx wiki| image:: https://img.shields.io/badge/-wiki-blue
    :target: https://github.com/asciimoo/searx/wiki
 
 .. |AGPL License|  image:: https://img.shields.io/badge/license-AGPL-blue.svg
-   :target: https://github.com/asciimoo/searx/blob/master/LICENSE
+   :target: https://github.com/return42/searx/blob/searx-next/LICENSE
 
 .. |Issues| image:: https://img.shields.io/github/issues/asciimoo/searx?color=yellow&label=issues
    :target: https://github.com/asciimoo/searx/issues
@@ -39,8 +39,8 @@ Privacy-respecting, hackable `metasearch engine`_ / *pronunciation* **səːks**.
 .. |PR| image:: https://img.shields.io/github/issues-pr-raw/asciimoo/searx?color=yellow&label=PR
    :target: https://github.com/asciimoo/searx/pulls
 
-.. |commits| image:: https://img.shields.io/github/commit-activity/y/asciimoo/searx?color=yellow&label=commits
-   :target: https://github.com/asciimoo/searx/commits/master
+.. |commits| image:: https://img.shields.io/github/commit-activity/y/return42/searx?color=yellow&label=commits
+   :target: https://github.com/return42/searx/commits/searx-next
 
 .. |OpenCollective searx backers| image:: https://opencollective.com/searx/backers/badge.svg
    :target: https://opencollective.com/searx#backer
@@ -55,10 +55,10 @@ Otherwise jump to the user_, admin_ and developer_ handbooks you will find on
 our homepage_.
 
 .. _searx.space: https://searx.space
-.. _user: https://asciimoo.github.io/searx/user
-.. _admin: https://asciimoo.github.io/searx/admin
-.. _developer: https://asciimoo.github.io/searx/dev
-.. _homepage: https://asciimoo.github.io/searx
+.. _user: https://return42.github.io/searx/user
+.. _admin: https://return42.github.io/searx/admin
+.. _developer: https://return42.github.io/searx/dev
+.. _homepage: https://return42.github.io/searx
 
 contact:
   openhub_ // twitter_ // IRC: #searx @ freenode
