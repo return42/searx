@@ -3,10 +3,10 @@
 .DEFAULT_GOAL=help
 
 # START Makefile setup
-export GIT_URL=https://github.com/asciimoo/searx
-export GIT_BRANCH=master
+export GIT_URL=https://github.com/return42/searx
+export GIT_BRANCH=searx-next
 export SEARX_URL=https://searx.me
-export DOCS_URL=https://asciimoo.github.io/searx
+export DOCS_URL=https://return42.github.io/searx
 # END Makefile setup
 
 include utils/makefile.include
