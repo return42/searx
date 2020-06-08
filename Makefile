@@ -229,6 +229,7 @@ PYLINT_FILES=\
 	searx/engines/gigablast.py \
 	searx/engines/google.py \
 	searx/engines/google_news.py \
+	searx/engines/google_videos.py \
 	tests/unit/test_plugins.py
 
 # ignored rules:
