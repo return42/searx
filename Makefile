@@ -231,6 +231,7 @@ PYLINT_FILES=\
 	searx/engines/google_news.py \
 	searx/engines/google_videos.py \
 	searx/engines/google_scholar.py \
+	searx/engines/google_images.py \
 	tests/unit/test_plugins.py
 
 
