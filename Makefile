@@ -218,6 +218,8 @@ ifeq ($(PY),2)
 test.pylint:
 	@echo "LINT      skip liniting py2"
 else
+# TODO: balance linting with pylint
+
 test.pylint: pyenvinstall
 	$(call cmd,pylint,$(PYLINT_FILES))
 endif
