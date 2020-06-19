@@ -942,7 +942,7 @@ def opensearch():
 
     resp = Response(response=ret,
                     status=200,
-                    mimetype="text/xml")
+                    mimetype="application/opensearchdescription+xml")
     return resp
 
 
@@ -1012,6 +1012,14 @@ def config():
         'doi_resolvers': [r for r in settings['doi_resolvers']],
         'default_doi_resolver': settings['default_doi_resolver'],
     })
+
+
+@app.route('/translations.js')
+def js_translations():
+    return render(
+        'translations.js.tpl',
+        override_theme='__common__',
+    ), {'Content-Type': 'text/javascript; charset=UTF-8'}
 
 
 @app.errorhandler(404)
