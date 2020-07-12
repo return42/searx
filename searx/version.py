@@ -3,7 +3,7 @@
 """Version numbers and other package META data"""
 
 VERSION_MAJOR = 0
-VERSION_MINOR = 16
+VERSION_MINOR = 17
 VERSION_BUILD = 0
 
 VERSION_STRING = "{0}.{1}.{2}".format(
