@@ -29,7 +29,6 @@ from searx.plugins import (
     oa_doi_rewrite,
     https_rewrite,
     infinite_scroll,
-    open_results_on_new_tab,
     self_info,
     search_on_category_select,
     tracker_url_remover,
