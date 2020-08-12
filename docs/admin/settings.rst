@@ -76,7 +76,7 @@ Global Settings
   messages in the browser too, so this must be deactivated in production.
 
 ``request_timeout`` :
-  Global timeout of the requests made to others engines in seconds. A bigger
+  Global timeout of the requests made to others engines in seconds.  A bigger
   timeout will allow to wait for answers from slow engines, but in consequence
   will slow searx reactivity (the result page may take the time specified in the
   timeout to load)
@@ -89,7 +89,7 @@ Global Settings
   blank.
 
 ``default_theme`` :
-  Name of the theme you want to use by default on you searx instance.
+  Name of the theme you want to use by default on your searx instance.
 
 ``useragent_suffix`` :
   Suffix to the user-agent searx uses to send requests to others engines.  If an
@@ -99,7 +99,7 @@ Global Settings
   Allow your instance of searx of being able to proxy images.  Uses memory space.
 
 ``default_locale`` :
-  Aearx interface language.  If blank, the locale is detected by using the
+  Searx interface language.  If blank, the locale is detected by using the
   browser language.  If it doesn't work, or you are deploying a language
   specific instance of searx, a locale can be defined using an ISO language
   code, like ``fr``, ``en``, ``de``.
@@ -170,7 +170,7 @@ Engine settings
   is described in the file.
 
 ``disabled`` : optional
-  To disable by default the engine, but not deleting it. It will allow the user
+  To disable by default the engine, but not deleting it.  It will allow the user
   to manually activate it in the settings.
 
 ``language`` : optional
