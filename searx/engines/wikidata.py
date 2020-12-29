@@ -27,6 +27,14 @@ from searx.engines.wikipedia import _fetch_supported_languages, supported_langua
 
 logger = logger.getChild('wikidata')
 
+# tests
+tests = {
+    'infobox': {
+        'matrix': {'query': ('linux', 'new york', 'bbc')},
+        'result_container': ['has_infobox'],
+    }
+}
+
 # SPARQL
 SPARQL_ENDPOINT_URL = 'https://query.wikidata.org/sparql'
 SPARQL_EXPLAIN_URL = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql?explain'

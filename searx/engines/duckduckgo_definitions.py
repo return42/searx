@@ -22,6 +22,14 @@ from searx.external_urls import get_external_url, get_earth_coordinates_url, are
 
 logger = logger.getChild('duckduckgo_definitions')
 
+# tests
+tests = {
+    'infobox': {
+        'matrix': {'query': ('linux', 'new york', 'bbc')},
+        'result_container': ['has_infobox'],
+    }
+}
+
 URL = 'https://api.duckduckgo.com/'\
     + '?{query}&format=json&pretty=0&no_redirect=1&d=1'
 
