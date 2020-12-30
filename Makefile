@@ -75,6 +75,12 @@ run:  buildenv pyenvinstall
 	) &
 	SEARX_DEBUG=1 $(PY_ENV)/bin/python ./searx/webapp.py
 
+
+PHONY += searx.checker
+searx.checker: buildenv pyenvinstall
+	$(PY_ENV)/bin/python -u -m searx.search.checker
+
+
 # docs
 # ----
 
