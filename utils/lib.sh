@@ -1431,7 +1431,7 @@ lxc_image_copy() {
 
     # usage: lxc_copy_image <remote image> <local image>
     #
-    #        lxc_copy_image "images:ubuntu/19.10"  "ubu1910"
+    #        lxc_copy_image "images:ubuntu/20.04"  "ubu2004"
 
     if lxc_image_exists "local:${LXC_SUITE[i+1]}"; then
         info_msg "image ${LXC_SUITE[i]} already copied --> ${LXC_SUITE[i+1]}"
