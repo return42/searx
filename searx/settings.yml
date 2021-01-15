@@ -4,10 +4,10 @@ general:
     contact_url: False # mailto:contact@example.com
 
 brand:
-    git_url: https://github.com/searx/searx
+    git_url: https://github.com/return42/searx
     git_branch: master
     issue_url: https://github.com/searx/searx/issues
-    docs_url: https://searx.github.io/searx
+    docs_url: https://return42.github.io/searx
     public_instances: https://searx.space
     wiki_url: https://github.com/searx/searx/wiki
     twitter_url: https://twitter.com/Searx_engine
@@ -23,7 +23,7 @@ server:
     port : 8888
     bind_address : "127.0.0.1" # address to listen on
     secret_key : "ultrasecretkey" # change this!
-    base_url : False # Set custom base_url. Possible values: False or "https://your.custom.host/location/"
+    base_url : https://darmarit.org/searx # Set custom base_url. Possible values: False or "https://your.custom.host/location/"
     image_proxy : False # Proxying image results through searx
     http_protocol_version : "1.0"  # 1.0 and 1.1 are supported
     method: "POST" # POST queries are more secure as they don't show up in history but may cause problems when using Firefox containers
