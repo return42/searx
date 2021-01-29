@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Development Quickstart &#8212; Searx Documentation (Searx-0.18.0.tex)</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/searx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/tabs.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.js"></script>
+    <script src="../_static/sphinx_tabs/tabs.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="How to contribute" href="contribution_guide.html" />
+    <link rel="prev" title="Developer documentation" href="index.html" />
+  <script>DOCUMENTATION_OPTIONS.URL_ROOT = '../';</script>
+   
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="contribution_guide.html" title="How to contribute"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Developer documentation"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Searx Documentation (Searx-0.18.0.tex)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Developer documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Development Quickstart</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="development-quickstart">
+<span id="devquickstart"></span><h1>Development Quickstart<a class="headerlink" href="#development-quickstart" title="Permalink to this headline">¶</a></h1>
+<p>Searx loves developers, just clone and start hacking.  All the rest is done for
+you simply by using <a class="reference internal" href="makefile.html#makefile"><span class="std std-ref">make</span></a>.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/searx/searx.git
+</pre></div>
+</div>
+<p>Here is how a minimal workflow looks like:</p>
+<ol class="arabic simple">
+<li><p><em>start</em> hacking</p></li>
+<li><p><em>run</em> your code: <a class="reference internal" href="makefile.html#make-run"><span class="std std-ref">make run</span></a></p></li>
+<li><p><em>test</em> your code: <a class="reference internal" href="makefile.html#make-test"><span class="std std-ref">make test</span></a></p></li>
+</ol>
+<p>If you think at some point something fails, go back to <em>start</em>.  Otherwise,
+choose a meaningful commit message and we are happy to receive your pull
+request. To not end in <em>wild west</em> we have some directives, please pay attention
+to our “<a class="reference internal" href="contribution_guide.html#how-to-contribute"><span class="std std-ref">How to contribute</span></a>” guideline.</p>
+<p>If you implement themes, you will need to compile styles and JavaScript before
+<em>run</em>.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>make themes
+</pre></div>
+</div>
+<p>Don’t forget to install <a class="reference external" href="https://www.npmjs.com/">npm</a> first.</p>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-VWJ1bnR1IC8gZGViaWFu docutils container">
+<div class="docutils container">
+<p>Ubuntu / debian</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-QXJjaCBMaW51eA== docutils container">
+<div class="docutils container">
+<p>Arch Linux</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-RmVkb3JhIC8gUkhFTA== docutils container">
+<div class="docutils container">
+<p>Fedora / RHEL</p>
+</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-VWJ1bnR1IC8gZGViaWFu active docutils container">
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo -H apt-get install npm
+</pre></div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-QXJjaCBMaW51eA== docutils container">
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo -H pacman -S npm
+</pre></div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-RmVkb3JhIC8gUkhFTA== docutils container">
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo -H dnf install npm
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+  <span id="sidebar-top"></span>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  
+    
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/searx_logo_small.png" alt="Logo"/>
+            </a></p>
+  
+
+  <h3>Project Links</h3>
+  <ul>
+    <li><a href="https://github.com/searx/searx">Source</a>
+  
+    <li><a href="https://github.com/searx/searx/wiki">Wiki</a>
+  
+    <li><a href="https://searx.space">Public instances</a>
+  
+    <li><a href="https://twitter.com/Searx_engine">Twitter</a>
+  
+    <li><a href="https://github.com/searx/searx/issues">Issue Tracker</a>
+  </ul><h3>Navigation</h3>
+<ul>
+  <li><a href="../index.html">Overview</a>
+    <ul>
+      <li><a href="index.html">Developer documentation</a>
+        <ul>
+          <li>Previous: <a href="index.html" title="previous chapter">Developer documentation</a>
+          <li>Next: <a href="contribution_guide.html" title="next chapter">How to contribute</a></ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015-2020, Adam Tauber, Noémi Ványi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.4.1.
+    </div>
+  <script src="../_static/version_warning_offset.js"></script>
+
+  </body>
+</html>
